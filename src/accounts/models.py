@@ -54,7 +54,7 @@ class EmailLoginField(models.EmailField):
 # The most important model
 
 class User(AbstractBaseUser, PermissionsMixin):
-	credential_choices = ( ('A', 'Athlete'), ('T', 'Team Captain'), ('L', 'League Organizer'), ('ADMIN', 'ADMIN') )
+	credential_choices = ( ('M', 'Manager'), ('ADMIN', 'ADMIN') )
 
 	email = EmailLoginField(max_length=100, unique=True, null=True, blank=True, verbose_name='Email Address')
 	username = models.CharField(max_length=50, unique=True, blank=True, null=True, verbose_name='Username')

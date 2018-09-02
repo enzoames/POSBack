@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # SPORTUNITED APPS
     'accounts',
     'send_email',
+    'service',
 
     # THIRD PARTY DJANGO APPS
     'rest_framework',

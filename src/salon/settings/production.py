@@ -36,7 +36,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '35.171.87.95', '35.171.87.95/api/', '35.171.87.95/api', 'clubsporta.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # SPORTUNITED APPS
     'accounts',
     'send_email',
+    'service',
 
     # THIRD PARTY DJANGO APPS
     'rest_framework',

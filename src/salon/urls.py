@@ -24,7 +24,7 @@ urlpatterns = [
 	# Main BackEnd routes
 	path('admin/', admin.site.urls),
 	url(r'^account/', include('allauth.urls')),
-
+	url(r'^api/salon/receipt/', include('service.urls'), name='service-url'),
 	url(r'^api/rest-auth/', include('rest_auth.urls')),
 	url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')), # Basic registration goes through here
 	# Other routes that may require implementation in the future
