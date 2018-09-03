@@ -13,20 +13,17 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 # The reason we need developement.py and production.py is because when in
 # production we will have different settings
 
-
+import os
+from .credentials import *
 from django.conf import settings
 from datetime import datetime
 from datetime import timedelta
-from .credentials import *
 
 # if not settings.DEBUG:
-import os
 print ("PRODUCTION")    
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -158,9 +155,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
-STATIC_URL = '/static/'
-
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
@@ -221,7 +216,7 @@ CORS_ALLOW_HEADERS = (
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_REPLACE_HTTPS_REFERER = True
 
-
+# when accessing the django admin on production, these need to be commented out
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # SECURE_SSL_REDIRECT = True
 # SESSION_COOKIE_SECURE = True
@@ -263,3 +258,7 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER':'accounts.serializers.UserSerializer',
     # 'LOGIN_SERIALIZER': 'accounts.serializers.LoginSerializer',
 }
+
+OLD_PASSWORD_FIELD_ENABLED = True
+LOGOUT_ON_PASSWORD_CHANGE = False
+
