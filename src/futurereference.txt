@@ -143,5 +143,12 @@ brew services restart postgresql
 \q
 
 
+==============================================
+============== POSTGRESQL MAC ================
+==============================================
+when debug is false and static files dont show on production, bypass by doing. access to production db
+
+python manage.py runserver --insecure
+
 
 
